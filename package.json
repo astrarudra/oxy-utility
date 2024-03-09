@@ -1,0 +1,23 @@
+{
+  "name": "oxy-utility",
+  "version": "1.0.0",
+  "description": "oxy-utility is your go-to solution for logging and tracking functionalities in JavaScript applications. Monitor function execution times, and take control of your code's performance effortlessly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astrarudra/oxy-utility.git"
+  },
+  "keywords": [
+    "utility",
+    "javascript"
+  ],
+  "author": "Rudra Roy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/astrarudra/oxy-utility/issues"
+  },
+  "homepage": "https://github.com/astrarudra/oxy-utility#readme"
+}
