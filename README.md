@@ -39,9 +39,8 @@ export const Controller: IController = oxy.oxyfy({
 // Optional - lock Oxy, useful for use in production.
 // Use your custom unlocking mechanism
 const  OxyUnlockFn  = (userInput) => {
-	const  token  =  decodeJWT(getAuthToken())
-	if (yourLogicToUnlock()) {
-		console.log("Authenticated - "  +  token.userId)
+	if (yourLogicToUnlock()) { // can be sync - api calls, your wish.
+		console.log("Authenticated - any message you to share")
 		return true
 	}
 	return false
