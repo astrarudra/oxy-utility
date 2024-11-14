@@ -26,7 +26,7 @@ const handleChainParentEnd = (exeChain, fnName, logger) => {
     })
 }
 
-const OxyInterceptor = (s) => (o) => {
+const OxyInterceptor = (s, onError) => (o) => {
     if (s.proxy) {
         console.log('Proxy already exists');
         return s.proxy;
@@ -78,6 +78,10 @@ const OxyInterceptor = (s) => (o) => {
                                 exeChain[fnName].error = true
                             }
                         }
+                        if(onError) {
+                            const errorMsg = formatError(error)
+                            onError(error, fnName, errorMsg)
+                        }
                         throw error;
                     }
                 };
@@ -98,6 +102,10 @@ const OxyInterceptor = (s) => (o) => {
                             const logDetails = [fnName, false, args, endTime - startTime, errorMsg]
                             s.logger(...logDetails, true, true) // log error
                             s.errorStack.push({ [fnName]: error.stack });
+                        }
+                        if(onError) {
+                            const errorMsg = formatError(error)
+                            onError(error, fnName, errorMsg)
                         }
                         throw error;
                     }

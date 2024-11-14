@@ -83,7 +83,7 @@ function Oxy(config) {
         exportRecords: (maxSize = 10000) => s.recorder.export(maxSize = 10000),
         getErrors: () => s.errorStack,
         getProxy: () => s.proxy,
-        oxyfy: (o) => interceptor(o)
+        oxyfy: (o, onError = null) => interceptor(o, onError)
     };
 }
 
